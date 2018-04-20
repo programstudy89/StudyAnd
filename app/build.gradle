@@ -13,10 +13,22 @@ android {
     }
     buildTypes {
         release {
-            minifyEnabled false
+            minifyEnabled true
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
+//    compileOptions {
+//        encoding "UTF-8"
+//        sourceCompatibility JavaVersion.VERSION_1_8
+//        targetCompatibility JavaVersion.VERSION_1_8
+//    }
+}
+
+repositories {
+    maven {
+        url 'https://oss.sonatype.org/content/repositories/snapshots'
+    }
+    mavenCentral()
 }
 
 dependencies {
@@ -26,4 +38,13 @@ dependencies {
     })
     compile 'com.android.support:appcompat-v7:25.0.1'
     testCompile 'junit:junit:4.12'
+    // smack api
+    compile "org.igniterealtime.smack:smack-java7:4.2.0"
+    // Optional for XMPPTCPConnection
+    compile "org.igniterealtime.smack:smack-tcp:4.2.0"
+    // Optional for XMPP-IM (RFC 6121) support (Roster, Threaded Chats, …)
+    compile "org.igniterealtime.smack:smack-im:4.2.0"
+    // Optional for XMPP extensions support
+    compile "org.igniterealtime.smack:smack-extensions:4.2.0"
+
 }

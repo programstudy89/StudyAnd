@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">StudyAnd</string>
+    <string name="hello_world">HELLO WORLD</string>
+    <string name="go_button">GO BUTTON</string>
 </resources>
